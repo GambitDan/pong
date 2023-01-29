@@ -3,6 +3,7 @@ from turtle import Turtle
 class Scoreboard(Turtle):
     
     def __init__(self):
+        """scoreboard initialisation"""
         super().__init__()
         self.color("white")
         self.penup()
@@ -12,6 +13,7 @@ class Scoreboard(Turtle):
         self.update_scoreboard()
     
     def update_scoreboard(self):
+        """update scoreboard"""
         self.clear()
         self.goto(-100, 200)
         self.write(self.l_score, align="center", font=("Courier", 80, "normal"))
@@ -19,9 +21,11 @@ class Scoreboard(Turtle):
         self.write(self.r_score, align="center", font=("Courier", 80, "normal"))
     
     def l_point(self):
+        """increase score for left paddle"""
         self.l_score += 1
         self.update_scoreboard()
     
     def r_point(self):
+        """increase score for right paddle"""
         self.r_score += 1
         self.update_scoreboard()
